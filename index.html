@@ -1,0 +1,10 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Desktop</title>
+<p id="m" style="font:20px sans-serif">Loading...</p>
+<script>
+fetch("https://raw.githubusercontent.com/ceyo0134/PojavLauncher/desktop-link/link.txt?t="+Date.now())
+.then(function(r){return r.text()})
+.then(function(t){var u=t.split("\n")[0].trim();
+ if(u.indexOf("https://")===0&&u.indexOf(".trycloudflare.com")>0){location.replace(u)}
+ else{document.getElementById("m").textContent="Link not ready, try again in a minute"}})
+.catch(function(){document.getElementById("m").textContent="Error, try again"});
+</script>
